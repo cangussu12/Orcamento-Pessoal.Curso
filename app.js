@@ -60,7 +60,7 @@ class Bd {
 				continue
 			}
 
-			despesa.id = i
+ 			despesa.id = i
 			despesas.push(despesa)
 		}
 
@@ -178,14 +178,26 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
 
     if(despesas.length == 0 && filtro == false){
 		despesas = bd.recuperarTodosRegistros() 
+
+		        //gerar Total
+				let total = 0
+ 
+				//valida em despesas o total
+				despesas.forEach(function(d){
+		 
+					total += Number(d.valor)
+				})
+
+				document.getElementById('valor_total').innerHTML = `R$ ${total.toFixed(2)} reais`
 	}
+				
 
 	let listaDespesas = document.getElementById("listaDespesas")
     listaDespesas.innerHTML = ''
-	despesas.forEach(function(d){
+	despesas.forEach(function(d){	
 
 		//Criando a linha (tr)
-		var linha = listaDespesas.insertRow();
+		let linha = listaDespesas.insertRow();
 
 		//Criando as colunas (td)
 		linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}` 

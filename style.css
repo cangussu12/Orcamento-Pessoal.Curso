@@ -1,0 +1,17 @@
+.valorTotalCss {
+    background-color: darkseagreen;
+    border-radius: 7px;
+    font: bold;
+    font-style: initial;
+    text-align: center;
+    align-content: right;
+    width: 200px;
+    height: 25px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.total_div_css {
+
+align-items: center;
+}
